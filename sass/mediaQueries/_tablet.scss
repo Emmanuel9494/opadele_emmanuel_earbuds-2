@@ -1,6 +1,86 @@
 @use "../abstracts" as a;
 
 @media screen and (min-width: 768px) {
-   
+//    Xray slider
+#mobile-tablet-view{
+    display: none;
+  }
+
+  #comparison-con{
+    display: block;
+    background-color: a.$black;
+  }
+
+  #xray{
+      position: relative;
+      aspect-ratio: 16/10;
+      background-image: url(../images/trivox-xray.png);
+      background-size: cover;
+      
+  }
+
+  #divisor{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url(../images/trivox-no-xray.png);
+      background-size: cover;
+      height: 100%;
+      width: 50%;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    // top: 5%;
+    // left: -2%;
+    background: a.$white;
+    width: 100%;
+  }
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 15px;
+    width: 98%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    outline: none;
+  }
+
+  input[type=range]::active {
+    border: none;
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 15px;
+    background: a.$red;
+    border-radius: 6px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 15px;
+    background: a.$white;
+    border-radius: 0;
+  }
+
+  input[type=range]:focus::-webkit-slider-thumb {
+    background: rgba(247, 147, 147, 0.5);
+  }
+
+  input[type=range]:focus::-moz-range-thumb {
+    background: rgba(247, 147, 147, 0.5);
+  }
 
 }

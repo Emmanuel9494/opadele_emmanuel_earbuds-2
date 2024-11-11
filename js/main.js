@@ -25,21 +25,97 @@
 // Trivox Text Scroll 
 (function () {
     window.addEventListener("load", function() {
-        const scrollText1 = document.querySelector('.scrollleft');
-        const scrollText2 = document.querySelector('.scrollright');
+        const scrollText1 = document.querySelectorAll('.scrollleft');
+        const scrollText2 = document.querySelectorAll('.scrollright');
         
-        // Get width of the scroll text element
-        const textWidth1 = scrollText1.offsetWidth;
-        const textWidth2 = scrollText2.offsetWidth;
+        scrollText1.forEach(scrollText1 => {
+            const textWidth1 = scrollText1.offsetWidth;
         
-        // Animate
-        gsap.fromTo(scrollText1, 
-            {x: "0%"},
-            {x: `-${textWidth1}`, opacity: 1,duration: 10,ease: "linear",repeat:-1,repeatDelay: 0}
-        );
-        gsap.fromTo(scrollText2, 
-            {x: "-100%"},
-            {x: `+${textWidth2}`, opacity: 1,duration: 15,ease: "linear",repeat:-1,repeatDelay: 0}
-        );
+            gsap.fromTo(scrollText1, 
+                { x: "0%" },
+                { x: `-${textWidth1}`, opacity: 1, duration: 10, ease: "linear", repeat:-1, repeatDelay: 0, delay:1});
+        });
+        scrollText2.forEach(scrollText2 => {
+            const textWidth2 = scrollText2.offsetWidth;
+        
+            gsap.fromTo(scrollText2, 
+                { x: "-100%" },
+                { x: `+${textWidth2}`, opacity: 1, duration: 10, ease: "linear", repeat:-1, repeatDelay: 0});
+        });
     });
+})();
+
+// Trivox reel
+(function () {
+
+    const player = new Plyr('video');
+    player;
+   
+})();
+
+// X-ray slider
+(() => {
+
+    const divisor = document.querySelector("#divisor");
+    const slider = document.querySelector("#slider");
+
+
+    function moveDivisor(){
+        console.log(slider.value);
+        divisor.style.width = slider.value+"%";
+    }
+
+    slider.addEventListener("input", moveDivisor);
+  
+})();
+// scroll Animation
+(() => {
+
+
+    const canvas = document.querySelector("#trivox-flip");
+    const context = canvas.getContext("2d");
+
+    canvas.width = 1920;
+    canvas.height = 1080;
+
+    const frameCount = 841; //how many frame do we have
+
+    const images = [];  //array to hold all images
+
+    //create an object called buds to hold the current frame 
+    const pics = {
+        frame: 0
+    }
+
+    // run a for loop to populate image array
+    for(let i =0; i < frameCount; i++){
+        const img = new Image();
+        img.src =`images/trivox-animation${(i + 1).toString().padStart(4, '0')}.jpg`;
+        images.push(img)
+
+    }
+
+    // console.table(images);
+
+    gsap.to(pics, {
+        frame: 841,
+        snap: "frame",
+        scrollTrigger: {
+            trigger: "#trivox-flip",
+            pin: true,
+            scrub: 1,
+            markers: false,
+            start: "top top"
+        },
+        onUpdate: render
+    })
+    images[0].addEventListener("load", render);
+
+    function render(){
+        context.clearRect(0,0, canvas.width, canvas.height);
+        // console.log(buds.frame);
+        console.log(images[pics.frame]);
+        context.drawImage(images[pics.frame], 0, 0);
+    }
+
 })();

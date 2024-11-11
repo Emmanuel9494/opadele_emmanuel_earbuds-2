@@ -1,4 +1,7 @@
 @use "../abstracts" as a;
+body{
+    overflow-x: hidden;
+}
 .no-mobile{
     display: none;
 }
@@ -108,20 +111,22 @@ a{
         display: flex;
         color: a.$grey;
         text-transform: uppercase;
-        font-size: 190px;
+        font-size: 50vw;
         white-space: nowrap;
         text-align: left;
-        letter-spacing: 50px; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font; 
         
     }
     .scroll-right{
         display: flex;
         color: a.$grey;
         text-transform: uppercase;
-        font-size: 190px;
+        font-size: 50vw;
         white-space: nowrap; 
         text-align: right; 
-        letter-spacing: 50px;  
+        letter-spacing: 50px;
+        font-family: a.$sub-font;  
     }
     .hero-content{
         color: a.$black;
@@ -151,3 +156,163 @@ a{
         }
     }
 }
+// Trivox Reel
+:root{
+    --plyr-color-main: rgba(255, 255, 255, 0.308);
+    --plyr-control-icon-size: 15px;
+    --plyr-control-radius: 20px;
+    --plyr-font-family: "Open Sans", Arial, sans-serif;
+    --plyr-control-spacing: 15px;
+  }
+
+
+// break case Section  
+  #show-case{
+    background-color: a.$off-white;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+    .scroll-left{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap;
+        text-align: left;
+        letter-spacing: 50px;
+        font-family: a.$sub-font; 
+        margin-top: 0; 
+    }
+    .scroll-right{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+        margin-top: 100px;
+        
+    }
+    .show-mid{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h2{
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            font-size: 20vw;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight:100;
+        }
+        .left{
+            font-family: a.$sub-font;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 2px; 
+        }
+        .right{
+            font-family: a.$sub-font;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+    }  
+  }
+//   x-ray view
+
+#comparison-con{
+    display: none;
+  }
+#mobile-tablet-view{
+    display: block;
+   
+    img{
+        margin-bottom: 15px;
+        background-color: a.$black;
+       
+    }
+    .no-magin{
+        margin-bottom: 0;
+      }
+}
+// 
+#break-case{
+    background-color: a.$off-white;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    height: 250px;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+
+    .scroll-right{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+        margin-top: 100px;
+        // position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    .show-mid{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h2{
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            font-size: 20vw;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight:100;
+        }
+        .left{
+            font-family: a.$sub-font;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 2px; 
+        }
+        .right{
+            font-family: a.$sub-font;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+    }  
+  }
+ 
+//   Scroll Animation
+#trivox-flip {
+    max-width: 100%;
+  }
+
+  
+
