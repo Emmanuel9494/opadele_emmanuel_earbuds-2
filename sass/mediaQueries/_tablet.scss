@@ -34,7 +34,7 @@
     -moz-appearance: none;
     appearance: none;
     position: relative;
-    // top: 5%;
+    top: 5%;
     // left: -2%;
     background: a.$white;
     width: 100%;
@@ -46,7 +46,7 @@
 
   input[type=range]::-moz-range-track {
     height: 15px;
-    width: 98%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
     position: relative;
     outline: none;
@@ -60,10 +60,10 @@
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
+    width: 50px;
     height: 15px;
     background: a.$red;
-    border-radius: 6px;
+    border-radius: 2px;
   }
 
   input[type=range]::-moz-range-thumb {
