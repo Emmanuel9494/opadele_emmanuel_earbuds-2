@@ -1,6 +1,8 @@
 @use "../abstracts" as a;
+@use "../components";
 body{
     overflow-x: hidden;
+    background-color: black;
 }
 .no-mobile{
     display: none;
@@ -13,7 +15,7 @@ a{
 
 // MAIN NAV
 #main-nav{
-    position: relative;
+    position: fixed;
     background-color: a.$black;
     color: a.$white;
     justify-items: center;
@@ -55,9 +57,9 @@ a{
     }
     .mobile-nav{
         background-color: a.$black;
-        position: fixed;
+        position: absolute;
         width: 100%;
-        top:13%;
+        top: 100%;
         justify-items: center;
         transition: top 5s ease-in-out;
         z-index: -1;
@@ -67,7 +69,6 @@ a{
             list-style: none;
             font-family: a.$sub-font;
             font-weight: lighter;
-            // text-transform: uppercase;
             margin-top: 10px;
             margin-bottom: 10px;
             flex-direction: column;
@@ -99,6 +100,7 @@ a{
     background-color: a.$off-white;
     overflow: hidden;
     pointer-events: none;
+   
     .grid-con{
         grid-column: 2/3;
         grid-row:1/1;	
@@ -250,11 +252,81 @@ a{
 }
 // 
 #break-case{
+    background-color: a.$black;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    height: 250px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+
+    .scroll-right{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+        margin-top: 100px;
+        // position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    .show-mid{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: a.$white;
+        h2{
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            font-size: 20vw;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight:100;
+        }
+        .left{
+            font-family: a.$sub-font;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 2px; 
+        }
+        .right{
+            font-family: a.$sub-font;
+            text-transform: uppercase;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+    }  
+  }
+ 
+//   Scroll Animation
+#trivox-flip {
+    max-width: 100%;
+  }
+
+//   
+#break-case2{
     background-color: a.$off-white;
     overflow: hidden;
     pointer-events: none;
     position: relative;
     height: 250px;
+    margin-top: -260px;
     .grid-con{
         grid-column: 2/3;
         grid-row:1/1;	
@@ -308,11 +380,155 @@ a{
         }
     }  
   }
- 
-//   Scroll Animation
-#trivox-flip {
-    max-width: 100%;
-  }
+//  Infor Earbuds Section
+#info-earbuds{
+    background-color: a.$off-white;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+    .scroll-right{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+        top: 50%;
+        left: 50%;
+    }
+    .scroll-left{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap;
+        text-align: left;
+        letter-spacing: 50px;
+        font-family: a.$sub-font; 
+        margin-top: 0; 
+    }
+    .main-info{
+        position: absolute;
+        top:10%;
+        .new-head{
+            text-align: center;
+            font-family: a.$sub-font;
+            font-size: 4vw;
+            font-weight: lighter;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .info{
+            margin-bottom: 75px;
+            h2{
+                text-transform: uppercase;
+                font-family: a.$main-font;
+                font-weight: 200;
+            }
+            p{
+                font-family: a.$sub-font;
+                font-weight: lighter;
+                padding-top: 5px;
 
-  
+            }
+        }
+    }
+} 
+// Review Section
+#main-review{
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+   
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+    .scroll-right{
+        // position: absolute;
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+       margin-top: -200px;
+       
+    }
+    .scroll-left{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap;
+        text-align: left;
+        letter-spacing: 50px;
+        font-family: a.$sub-font; 
+        margin-top: 0; 
+    }
+    .review1, .review2{
+        background-color: a.$white;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        align-content: center;
+        font-family: a.$sub-font;
+        padding: 12px;
+        z-index: 2;
+        
+    }
+    .review1{
+        margin-top: -185px;
+        .left{
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .center{
+            margin-bottom: 5px;
+            font-family: a.$sub-font;
+            font-weight: lighter;
+        }
+        .right{
+            display: flex;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            justify-content: flex-end;
+
+        }
+    }
+    .review2{
+        .left{
+            display: flex;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            justify-content: flex-end;
+           
+        }
+        .center{
+            margin-bottom: 5px;
+            font-family: a.$sub-font;
+            font-weight: lighter;
+        }
+        .right{
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+
+        }
+    }
+
+}
+
 
