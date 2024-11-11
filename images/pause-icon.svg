@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41.702" height="41.702" viewBox="0 0 41.702 41.702">
+  <g id="pause-icon" transform="translate(-214.649 -756.449)">
+    <path id="Icon_akar-circle-triangle-right-fill" data-name="Icon akar-circle-triangle-right-fill" d="M22.351,1.5A20.851,20.851,0,1,0,43.2,22.351,20.851,20.851,0,0,0,22.351,1.5ZM18.56,16.285a1.531,1.531,0,0,1,.751-1.336,1.346,1.346,0,0,1,1.46.076l8.53,6.066a1.573,1.573,0,0,1,0,2.523l-8.53,6.066a1.346,1.346,0,0,1-1.46.076,1.534,1.534,0,0,1-.751-1.338Z" transform="translate(213.149 754.949)"/>
+    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="10" cy="11.5" rx="10" ry="11.5" transform="translate(226 765.8)"/>
+    <line id="Line_8" data-name="Line 8" y2="14.072" transform="translate(232.5 769.964)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_9" data-name="Line 9" y2="14.072" transform="translate(238.5 769.964)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

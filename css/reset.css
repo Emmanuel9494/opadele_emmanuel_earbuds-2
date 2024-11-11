@@ -1,6 +1,6 @@
 /* ---General rules - scales images, videos to size of container--- */
 img, embed, object, video, picture, svg {
-    max-width: inherit; 
+    max-width: 100%; 
     display: block;
   }
   
