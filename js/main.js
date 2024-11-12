@@ -25,8 +25,8 @@
 // Trivox Text Scroll 
 (function () {
     window.addEventListener("load", function() {
-        const scrollText1 = document.querySelectorAll('.scrollleft');
-        const scrollText2 = document.querySelectorAll('.scrollright');
+        const scrollText1 = document.querySelectorAll('.scroll-left');
+        const scrollText2 = document.querySelectorAll('.scroll-right');
         
         scrollText1.forEach((textElement) => {
             const textWidth = textElement.offsetWidth;
@@ -86,6 +86,7 @@
     slider.addEventListener("input", moveDivisor);
   
 })();
+
 // scroll Animation
 (() => {
 
@@ -123,8 +124,8 @@
             pin: true,
             scrub: 1,
             markers: true,
-            start: "30% 30%",
-            end: "100%  40%"
+            start: "top 40%"
+            // end: "50%  10%"
         },
         onUpdate: render
     })
@@ -138,6 +139,7 @@
     }
 
 })();
+
 // Hotspot
 (() => {
     
@@ -227,4 +229,6 @@
       hotSpot.addEventListener("mouseout", hideInfo);
     });
   })();
+
+
   

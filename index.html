@@ -29,8 +29,8 @@
                 <li><a href="">Headphones</a></li>
                 <li><a href="">Earbuds</a></li>
                 <li><a href="">Accessories</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact</a></li>
             </ul>
         </div>
         <img class="shop-icon" src="images/shop-icon.svg" alt="shopping cart">
@@ -114,11 +114,11 @@
         </div>
      </section>
      <!-- Scroll Animation -->
-      <!-- <section class="full-width-grid-con"> -->
+      <section class="full-width-grid-con">
         <div class="col-span-full">
             <canvas id="trivox-flip"></canvas> 
         </div>
-      <!-- </section> -->
+      </section>
        <!-- Break Section -->
      <section id="break-case2">
         <h2 class="hidden"> Trivox New Release</h2>
@@ -245,40 +245,30 @@
              <section id="about-us">
                 <h2 class="hidden"> About The Team Behind Trivox </h2>
                 <h3 class="col-span-full">About Us</h3>
-                <div class="scroll-hide full-width-grid-con">
-                    <p class="scroll-right">Trise-v1</p>
+                <div id="main-info">
+                    <div class="grid-con abt-body">
+                    <h2 class="head-info col-span-full">Vision</h2>
+                    <div class="col-span-full about-para">
+                        <p>To become the leading brand in audio innovation, known for creating immersive and user-centered listening experiences that inspire connection and creativity. We envision a future where Trivox products elevate sound quality and seamlessly integrate into the lifestyle of every listener, setting new standards in technology, design, and sustainability.
+                        </p>
+                    </div>
                 </div>
-                <div class="grid-con">
-                    <h2 class="full-width-grid-con">Vision</h2>
+
+                <div class="grid-con abt-body">
+                    <h2 class="head-info col-span-full">Mission</h2>
                     <div class="col-span-full about-para">
-                        <p>To become the leading brand in audio innovation, known for creating immersive and user-centered listening experiences that inspire connection and creativity.
-                            <span><p class="show-more">Read More</p>
-                                <p class="more-about"> We envision a future where Trivox products elevate sound quality and seamlessly integrate into the lifestyle of every listener, setting new standards in technology, design, and sustainability.
-                                    <p class="hide-more">hide</p>
-                                </p>
-                            </span>
+                        <p>To redefine audio experiences by merging innovative technology with exceptional design, empowering users to connect, create, and experience sound in its purest form. Trivox commits to delivering superior audio quality, intuitive functionality, and comfort through each product, enhancing every moment for the modern, tech-savvy listener.
                         </p>
                     </div>
-                    <h2 class="full-width-grid-con">Mission</h2>
+                </div>
+
+                <div class="grid-con abt-body">
+                    <h2 class="head-info col-span-full">Policies</h2>
                     <div class="col-span-full about-para">
-                        <p>To redefine audio experiences by merging innovative technology with exceptional design, empowering users to connect, create, and experience sound in its purest form.
-                            <span><p class="show-more">Read More</p>
-                                <p class="more-about"> Trivox commits to delivering superior audio quality, intuitive functionality, and comfort through each product, enhancing every moment for the modern, tech-savvy listener
-                                    <p class="hide-more">hide</p>
-                                </p>
-                            </span> 
+                        <p>Trivox is committed to delivering high-quality products backed by a robust Product Quality and Durability Policy. We offer a 2-year warranty covering manufacturing defects, with products tested for extreme durability against water, shock, and heat. Additionally, customers can take advantage of a discounted replacement program for worn accessories like ear tips and cables.
                         </p>
                     </div>
-                    <h2 class="full-width-grid-con">Policies</h2>
-                    <div class="col-span-full about-para">
-                        <p>Trivox is committed to delivering high-quality products backed by a robust Product Quality and Durability Policy.
-                            <span><p class="show-more">Read More</p>
-                                <p class="more-about"> We offer a 2-year warranty covering manufacturing defects, with products tested for extreme durability against water, shock, and heat. Additionally, customers can take advantage of a discounted replacement program for worn accessories like ear tips and cables.
-                                    <p class="hide-more">hide</p>
-                                </p>
-                            </span>
-                        </p>
-                    </div>
+                </div>
                 </div>
              </section>
             
@@ -287,19 +277,25 @@
             <p class="scroll-right">Trise-v1</p>
         </div>
         <!-- contact Us -->
-         <section id="contact" class="grid-con">
+         <section id="contact-us" class="grid-con">
             <h2 class="hidden"> Contact The Trivox Customer Service </h2>
             <h2 class="col-span-full">Contact</h2>
-            <form action="#" method="post" class="contact-form">
-                <label for="name">Name:</label><input type="text" id="name" name="name" required>
-                <label for="email">Email:</label><input type="email" id="email" name="email" required>
-                <label for="message">Message:</label><textarea id="message" name="message" rows="4" required></textarea>
+            <form action="#" method="post" class="contact-form col-span-full">
+                <label class="flex-contact" for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+              
+                <label class="flex-contact" for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+              
+                <label class="flex-contact" for="message">Message:</label>
+                <textarea id="message" name="message" rows="8" required></textarea>
+              
                 <button type="submit" class="send-button">Send</button>
               </form>
          </section>
         <!-- Footer -->
          <footer id="main-footer" class="grid-con">
-            <div class="col-span-full">
+            <div id="tri-logo" class="col-span-full">
                 <img src="images/trivox-logo.svg" alt="trivox Logo">
                 <h2>Trivox</h2>
             </div>
@@ -311,7 +307,7 @@
                 <a href=""><img src="images/x-icon.svg" alt="Trivox Twitter X"></a>
                 <a href=""><img src="images/linkdin-icon.svg" alt="Trivox Linkdin"></a>
             </div>
-            <div class="col-start-2 col-span-2">
+            <div class="foot-end col-start-2 col-span-2">
                 <p>2024 trivox Technologies</p>
                 <p>All Rights Reserved-Privacy Policy.</p>
             </div>

@@ -1,0 +1,103 @@
+@use "../abstracts" as a;
+#contact-us{
+    background-color: a.$off-white;
+    margin-bottom: 20px;
+    h2{
+        text-align: center;
+        font-family: a.$sub-font;
+        font-weight: lighter;
+        text-transform: uppercase;
+        font-size: 6vw;
+        padding-top: 20px;
+    }
+    
+}
+
+/* Contact Form Container Styling */
+.contact-form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: a.$sub-font;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+/* Label Styling */
+.contact-form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Input and Textarea Styling */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Placeholder Text Styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+}
+
+/* Textarea Specific Styling */
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Submit Button Styling */
+.contact-form .send-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #E50000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Button Hover Effect */
+.contact-form .send-button:hover {
+    background-color: #c40000;
+}
+
+/* Flexbox for Label and Input (optional, if you want a row layout) */
+.contact-form .flex-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 15px;
+    }
+    .contact-form h2 {
+        font-size: 20px;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 14px;
+    }
+    .contact-form .send-button {
+        font-size: 16px;
+    }
+}
