@@ -25,25 +25,43 @@
 // Trivox Text Scroll 
 (function () {
     window.addEventListener("load", function() {
-        const scrollText1 = document.querySelectorAll('.scroll-left');
-        const scrollText2 = document.querySelectorAll('.scroll-right');
+        const scrollText1 = document.querySelectorAll('.scrollleft');
+        const scrollText2 = document.querySelectorAll('.scrollright');
         
-        scrollText1.forEach(scrollText1 => {
-            const textWidth1 = scrollText1.offsetWidth;
+        scrollText1.forEach((textElement) => {
+            const textWidth = textElement.offsetWidth;
         
-            gsap.fromTo(scrollText1, 
-                { x: "0%" },
-                { x: `-${textWidth1}`, opacity: 1, duration: 10, ease: "linear", repeat:-1, repeatDelay: 0, delay:1});
+            gsap.fromTo(textElement, 
+                { x: "0%" }, 
+                { 
+                    x: `-${textWidth}px`, 
+                    opacity: 1,
+                    duration: 10,
+                    ease: "linear",
+                    repeat: -1, 
+                    repeatDelay: 0,
+                    delay: 1
+                });
         });
-        scrollText2.forEach(scrollText2 => {
-            const textWidth2 = scrollText2.offsetWidth;
+
         
-            gsap.fromTo(scrollText2, 
-                { x: "-100%" },
-                { x: `+${textWidth2}`, opacity: 1, duration: 10, ease: "linear", repeat:-1, repeatDelay: 0});
+        scrollText2.forEach((textElement) => {
+            const textWidth = textElement.offsetWidth;
+        
+            gsap.fromTo(textElement, 
+                { x: "-100%" }, 
+                { 
+                    x: `+${textWidth}px`, 
+                    opacity: 1,
+                    duration: 10,
+                    ease: "linear",
+                    repeat: -1, 
+                    repeatDelay: 0
+                });
         });
     });
 })();
+
 
 // Trivox reel
 (function () {
@@ -104,8 +122,9 @@
             trigger: "#trivox-flip",
             pin: true,
             scrub: 1,
-            markers: false,
-            start: "top top"
+            markers: true,
+            start: "30% 30%",
+            end: "100%  40%"
         },
         onUpdate: render
     })
