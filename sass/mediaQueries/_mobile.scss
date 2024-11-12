@@ -117,8 +117,15 @@ a{
         white-space: nowrap;
         text-align: left;
         letter-spacing: 50px;
-        font-family: a.$sub-font; 
+        font-family: a.$sub-font;
+        user-select: none;
+        animation: scroll 10s linear infinite;
         
+    }
+    @keyframes scroll{
+        to{
+            transform: translateX(-100%);
+        }
     }
     .scroll-right{
         display: flex;
@@ -530,5 +537,8 @@ a{
     }
 
 }
-
+// About Us Section
+#about-us{
+    background-color: a.$off-white;
+}
 
