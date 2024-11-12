@@ -1,1 +1,41 @@
 @use "../abstracts" as a;
+
+footer{
+    color: a.$white;
+    font-family: a.$sub-font;
+    font-size: 10px;
+    #tri-logo{
+        justify-items: center;
+        margin-top: 25px;
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        h2{
+            margin-top: 10px;
+            font-size: 8vw;
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+    }
+    p{
+        line-height: 19px;
+        text-align: center;
+    }
+    #trivox-socials{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        img{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+       
+    }
+    .foot-end{
+        margin-bottom: 45px;
+    }
+}

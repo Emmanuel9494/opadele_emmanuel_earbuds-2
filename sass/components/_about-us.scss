@@ -1,1 +1,43 @@
 @use "../abstracts" as a;
+
+// About Us Section
+#about-us{
+    background-color: a.$off-white;
+    position: relative;
+    h3{
+        text-align: center;
+        font-family: a.$sub-font;
+        font-weight: lighter;
+        text-transform: uppercase;
+        font-size: 6vw;
+        padding-top: 20px;
+    }
+    #main-info{
+        // position: absolute;
+        margin-top:5%;
+        z-index: 2;
+        h2{
+            background-color: a.$black;
+            color: a.$white;
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            letter-spacing: 5px;
+            display: flex;
+            justify-content: center;
+            .head-info{
+                margin-bottom: 15px;
+            }
+        }
+        .about-para{
+            margin-block:10px ;
+            font-family: a.$sub-font;
+           
+        }
+        .abt-body{
+            margin-bottom: 20px;
+        }
+    }
+    
+}

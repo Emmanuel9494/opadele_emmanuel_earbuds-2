@@ -1,5 +1,6 @@
 @use "../abstracts" as a;
 @use "../components";
+
 body{
     overflow-x: hidden;
     background-color: black;
@@ -111,6 +112,7 @@ a{
     }
     .scroll-left{
         display: flex;
+        margin-top: 25px;
         color: a.$grey;
         text-transform: uppercase;
         font-size: 50vw;
@@ -119,13 +121,7 @@ a{
         letter-spacing: 50px;
         font-family: a.$sub-font;
         user-select: none;
-        animation: scroll 10s linear infinite;
         
-    }
-    @keyframes scroll{
-        to{
-            transform: translateX(-100%);
-        }
     }
     .scroll-right{
         display: flex;
@@ -136,6 +132,7 @@ a{
         text-align: right; 
         letter-spacing: 50px;
         font-family: a.$sub-font;  
+
     }
     .hero-content{
         color: a.$black;
@@ -333,7 +330,6 @@ a{
     pointer-events: none;
     position: relative;
     height: 250px;
-    margin-top: -260px;
     .grid-con{
         grid-column: 2/3;
         grid-row:1/1;	
@@ -535,10 +531,24 @@ a{
 
         }
     }
+}
+// Break3
+#break-case3{
+    margin-top: 150px;
 
+    .scroll-right{
+        // position: absolute;
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+       margin-top: -200px;
+       
+    }
 }
-// About Us Section
-#about-us{
-    background-color: a.$off-white;
-}
+
 
