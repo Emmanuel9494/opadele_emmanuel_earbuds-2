@@ -1,25 +1,23 @@
 // Menu Navigation
 (function () {
-    const menuLogo = document.querySelector("#main-logo");
-   const showMobile = document.querySelector(".mobile-nav");
+  const menuLogo = document.querySelector("#main-logo");
+  const showMobile = document.querySelector(".mobile-nav");
+  const closeLinks = document.querySelectorAll(".mobile-nav a");
+  console.log(closeLinks);
 
-   function mobileNav() {
-      if (showMobile.classList.contains("display")) {
-        showMobile.classList.remove("display");
-        showMobile.classList.add("display-mobile-nav");
-        console.log("Menu shown");
+  function toggleMenu(){
+    showMobile.classList.toggle('display');
+    console.log("Menu Clicked");
 
-        // GSAP
-        gsap.fromTo(showMobile, 
-            { opacity: 0 }, 
-            {opacity: 1, duration: 1, ease: "power2.out"}
-        );
-     } else {
-        showMobile.classList.remove("display-mobile-nav");
-        showMobile.classList.add("display");
-        console.log("Menu hidden");}
-    }
-        menuLogo.addEventListener('click', mobileNav);
+}
+
+  menuLogo.addEventListener("click", toggleMenu);
+  showMobile.addEventListener("click", toggleMenu);
+  closeLinks.forEach(link => {
+     link.addEventListener("click", toggleMenu);
+    });
+
+  
 })();
 
 // Trivox Text Scroll 
@@ -33,15 +31,7 @@
         
             gsap.fromTo(textElement, 
                 { x: "0%" }, 
-                { 
-                    x: `-${textWidth}px`, 
-                    opacity: 1,
-                    duration: 10,
-                    ease: "linear",
-                    repeat: -1, 
-                    repeatDelay: 0,
-                    delay: 1
-                });
+                { x: `-${textWidth}px`, opacity: 1, duration: 10, ease: "linear", repeat: -1,repeatDelay: 0, delay: 1});
         });
 
         
@@ -50,9 +40,7 @@
         
             gsap.fromTo(textElement, 
                 { x: "-100%" }, 
-                { 
-                    x: `+${textWidth}px`, 
-                    opacity: 1,
+                { x: `+${textWidth}px`, opacity: 1,
                     duration: 10,
                     ease: "linear",
                     repeat: -1, 

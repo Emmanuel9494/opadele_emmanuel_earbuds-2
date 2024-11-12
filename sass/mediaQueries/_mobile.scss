@@ -50,12 +50,10 @@ a{
         width: 20px;
         height: 20px;
     }
-    .display-mobile-nav{
-        display:block;
+    .mobile-nav.display{
+        display: none;
     }
-    .display{
-        display:none;
-    }
+    
     .mobile-nav{
         background-color: a.$black;
         position: absolute;
@@ -64,6 +62,11 @@ a{
         justify-items: center;
         transition: top 5s ease-in-out;
         z-index: -1;
+        #close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+          }
        
         ul{
             display: flex;

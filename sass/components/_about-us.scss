@@ -26,6 +26,8 @@
             letter-spacing: 5px;
             display: flex;
             justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
             .head-info{
                 margin-bottom: 15px;
             }
@@ -37,6 +39,9 @@
         }
         .abt-body{
             margin-bottom: 20px;
+        }
+        .para-space{
+            margin-bottom: 25px;
         }
     }
     
