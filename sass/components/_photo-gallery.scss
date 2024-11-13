@@ -1,0 +1,33 @@
+@use "../abstracts" as a;
+
+#Tri-colors{
+    background-color: a.$off-white;
+    h2{
+        text-align: center;
+        font-size: 6vw;
+        font-family: a.$main-font;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        text-shadow: 3px 3px 34px rgba(0, 0, 0, 0.539);
+    }
+    #ear-buds{
+       
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    #color-btns{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+}
+button {
+    border: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
