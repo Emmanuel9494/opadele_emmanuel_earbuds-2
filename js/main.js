@@ -22,32 +22,22 @@
 
 // Trivox Text Scroll 
 (function () {
-    window.addEventListener("load", function() {
-        const scrollText1 = document.querySelectorAll('.scroll-left');
-        const scrollText2 = document.querySelectorAll('.scroll-right');
-        
-        scrollText1.forEach((textElement) => {
-            const textWidth = textElement.offsetWidth;
-        
-            gsap.fromTo(textElement, 
-                { x: "0%" }, 
-                { x: `-${textWidth}px`, opacity: 1, duration: 10, ease: "linear", repeat: -1,repeatDelay: 0, delay: 1});
-        });
+     const scrollText1 = document.querySelector(".scroll-left");
+        const scrollText2 = document.querySelector(".scroll-right");
+       
+        // Get width of the scroll text element
+        const textWidth1 = scrollText1.offsetWidth;
+        const textWidth2 = scrollText2.offsetWidth;
+       
+        gsap.fromTo(scrollText1,
+            {x: "0%"},
+            {x: `-${textWidth1}px`, opacity: 1,duration: 50,ease: "linear",repeat:-1,repeatDelay: 0}
+        );
+        gsap.fromTo(scrollText2,
+            {x: "-90%"},
+            {x: `+${textWidth2}px`, opacity: 1,duration: 50,ease: "linear",repeat:-1,repeatDelay: 0}
+        );
 
-        
-        scrollText2.forEach((textElement) => {
-            const textWidth = textElement.offsetWidth;
-        
-            gsap.fromTo(textElement, 
-                { x: "-100%" }, 
-                { x: `+${textWidth}px`, opacity: 1,
-                    duration: 10,
-                    ease: "linear",
-                    repeat: -1, 
-                    repeatDelay: 0
-                });
-        });
-    });
 })();
 
 
@@ -111,9 +101,9 @@
             trigger: "#trivox-flip",
             pin: true,
             scrub: 1,
-            markers: true,
-            start: "top 40%"
-            // end: "50%  10%"
+            markers: false,
+            start: "top 40%",
+            end: "50%  10%"
         },
         onUpdate: render
     })
@@ -218,5 +208,123 @@
     });
   })();
 
+  // Scroll Triggers Links
+(function () {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
+
+  const closeLinks = document.querySelectorAll(".mobile-nav a");
+
+  function scrollLink(e) {    
+    e.preventDefault(); 
+    console.log(e.currentTarget.hash);
+    let selectedLink = e.currentTarget.hash;
+    gsap.to(window, {duration: 2, scrollTo:{y:`${selectedLink}`, offsetY:100 }});
+}
+
+closeLinks.forEach((link) => {
+link.addEventListener("click", scrollLink);
+});
+  
+
+})();
+
+// Scroll trigger animation
+(function () {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
+
+  gsap.from("#one-trig", {
+    scrollTrigger: {
+      trigger: "#one-trig",
+      start: "top 80%",
+      end: "top 20%",
+      toggleActions: "play reverse play reverse",
+      markers: false 
+    },
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  gsap.from(".newTrig", {
+    opacity: 0,
+    x: 100,
+    duration: 2,
+    repeat:-1,
+    repeatDelay: 5,
+    ease: "power2.out"
+  });
+
+  gsap.from(".budsTrig", {
+    opacity: 0,
+    x: -100,
+    duration: 1,
+    duration: 2,
+    repeat:-1,
+    repeatDelay: 5,
+    ease: "power2.out"
+  });
+
+  gsap.from(".newTrig2", {
+    scrollTrigger: {
+      trigger: ".newTrig2",
+      start: "top 80%",
+      end: "top 20%",
+      toggleActions: "play reverse play reverse",
+      markers: false
+    },
+    opacity: 0,
+    x: 100,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  gsap.to(".moreTrig", {
+    x: "100%",
+    duration: 5,
+    ease: "linear",
+    repeat: -1
+  });
+  gsap.to(".moreTrig2", {
+    x: "-90%",
+    duration: 5,
+    ease: "linear",
+    repeat: -1
+  });
+
+  gsap.from("#properties", {
+    scrollTrigger: {
+      trigger: ".trig-point",
+      start: "top 80%", 
+      toggleActions: "play reverse play reverse",
+      markers: false
+    },
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+})();
+
+// Color Triangle Buttons
+(() => {
+  const earbuds = document.querySelector("#ear-buds");
+  const buttons = document.querySelectorAll("#color-btns button");
+
+
+  function swapColor(e){
+    console.log(e.currentTarget.id);
+    const selected = e.currentTarget.id;
+    earbuds.src =  `images/${selected}.png`
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", swapColor);
+  })
+
+})();
 
   

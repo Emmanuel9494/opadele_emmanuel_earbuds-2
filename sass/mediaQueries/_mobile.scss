@@ -24,6 +24,11 @@ a{
     padding-top: 10px;
     padding-bottom: 10px;
     z-index: 999;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
     #main-logo{
         display: flex;
         flex-direction: column;
@@ -44,11 +49,14 @@ a{
     .tri-name{
         font-family: a.$main-font;
         text-transform: uppercase;
-        font-size: 12vw;
+        font-size: 11vw;
     }
     .shop-icon{
         width: 20px;
         height: 20px;
+        margin-top: 15px;
+        margin-left: 30px;
+        
     }
     .mobile-nav.display{
         display: none;
@@ -59,6 +67,7 @@ a{
         position: absolute;
         width: 100%;
         top: 100%;
+        left: 0;
         justify-items: center;
         transition: top 5s ease-in-out;
         z-index: -1;
@@ -102,7 +111,7 @@ a{
 // HERO SECTION
 #hero{
     background-color: a.$off-white;
-    overflow: hidden;
+    // overflow: hidden;
     pointer-events: none;
    
     .grid-con{
