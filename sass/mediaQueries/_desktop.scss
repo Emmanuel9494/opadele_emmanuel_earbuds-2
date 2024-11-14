@@ -1,5 +1,131 @@
 @use "../abstracts" as a;
 
 @media screen and (min-width: 1280px) {
+    .no-dsk{
+        display: none;
+    }
+    // MAIN NAV
+#main-nav{
+      #main-logo{
+          align-items: center;
+          cursor: pointer;
+            .logo-img{
+                width: 40px;
+              height: 40px;
+          }
+          h2{
+            display: none;
+          }
+      }
+      .tri-name{
+         font-size: 2vw;
+      }
+      
+      .mobile-nav{
+          position: relative;
+          width: 100%;
+          ul{
+              display: flex;
+              justify-content: space-around;
+          }
+          ul li{
+              display: flex;
+              font-size: 1.5vw;
+          }
+          ul li:hover{
+            text-transform: uppercase;
+            font-size: 1.4vw;
+        }   
+      }
+  }
+
+  #hero{
+    .scroll-left{
+      margin-top: 0;
+      font-size: 25vw;
+    }
+    .s-roll{
+        margin-top: -230px;
+
+    }
+    .scroll-right{
+        font-size: 25vw;
+    }
+    .hero-content{
+        margin-top: -300px;
+        h2{
+            font-size: 20vw;
+            font-weight:100;
+        }
+        .left{
+          letter-spacing: 2px; 
+          font-size: 3vw;
+        }
+        .right{
+         letter-spacing: 2px;
+         font-size: 3vw;
+        }
+    }
+}
+// break case Section  
+#show-case{
+    .scroll-left{
+        font-size: 40vw;
+    }
+    .show-mid{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h2{
+            font-size: 20vw;
+            font-weight:100;
+        }
+        .left{
+          letter-spacing: 2px;
+          font-size: 3vw; 
+        }
+        .right{
+          letter-spacing: 2px;
+          font-size: 3vw;
+        }
+    }  
+  }
+  // Review Section
+#main-review{
+    .scroll-right{
+      font-size: 30vw;
+      margin-top: -200px;
+       
+    }
+    .scroll-left{
+        font-size: 20vw; 
+        margin-top: 0; 
+    }
+    .review1, .review2{
+        background-color: a.$white;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        align-content: center;
+        font-family: a.$sub-font;
+        padding: 12px;
+        z-index: 2;
+        
+    }
+    .review1{
+        margin-top: -255px;
+    }
+}
+// Break3
+#break-case3{
+    margin-top: 150px;
+
+    .scroll-right{
+        font-size: 15vw; 
+         text-align: center;
+       
+    }
+}
+
    
 }

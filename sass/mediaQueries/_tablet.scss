@@ -1,9 +1,16 @@
 @use "../abstracts" as a;
+@use "../components";
 
 @media screen and (min-width: 768px) {
 //    Xray slider
 #mobile-tablet-view{
     display: none;
+  }
+  .d-none{
+    display: none;
+  }
+  .display{
+    display: block;
   }
 
   #comparison-con{
@@ -13,9 +20,10 @@
 
   #xray{
       position: relative;
-      aspect-ratio: 16/10;
+      aspect-ratio: 16/9;
       background-image: url(../images/trivox-xray.png);
       background-size: cover;
+      z-index: 1000;
       
   }
 
@@ -35,7 +43,6 @@
     appearance: none;
     position: relative;
     top: 5%;
-    // left: -2%;
     background: a.$white;
     width: 100%;
   }
@@ -83,4 +90,386 @@
     background: rgba(247, 147, 147, 0.5);
   }
 
+  // Start 
+.no-mobile{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: a.$white;
+}
+
+
+// MAIN NAV
+#main-nav{
+  position: fixed;
+  display: inline-flex;
+  background-color: a.$black;
+  color: a.$white;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 999;
+  width: 100%;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+    #main-logo{
+        align-items: center;
+        cursor: pointer;
+        .logo-img{
+            width: 40px;
+            height: 40px;
+        }
+        h2{
+          display: none;
+        }
+    }
+    .tri-name{
+        font-family: a.$main-font;
+        text-transform: uppercase;
+        font-size: 2vw;
+    }
+    .shop-icon{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .mobile-nav.display{
+      display: block;
+  }
+    
+    .mobile-nav{
+        position: relative;
+        display: block;
+        width: 100%;
+        transition: top 5s ease-in-out;
+       
+        ul{
+            display: flex;
+            list-style: none;
+            font-family: a.$sub-font;
+            font-weight: lighter;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            justify-content: space-around;
+            padding-left:40px;
+            padding-right:40px;
+            flex-direction: row;
+        }
+        ul li{
+            display: flex;
+            font-size: 2vw;
+            border-radius: 5px;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 0;
+            width: fit-content;
+            
+        }
+        ul li:hover{
+            border-radius: 10px;
+            text-transform: uppercase;
+            font-size: 1.8vw;
+
+        }
+    }
+}
+// HERO SECTION
+#hero{
+    background-color: a.$off-white;
+    pointer-events: none;
+    .scroll-hide{
+      overflow: hidden;
+    }
+    .scroll-left{
+      margin-top: 75px;
+      font-size: 25vw;
+    }
+    .scroll-right{
+      font-size: 25vw;
+    }
+    .hero-content{
+        color: a.$black;
+        h2{
+            
+            font-size: 20vw;
+            font-weight:100;
+        }
+        .left{
+          letter-spacing: 2px; 
+          font-size: 3vw;
+        }
+        .right{
+         letter-spacing: 2px;
+         font-size: 3vw;
+        }
+    }
+}
+
+// break case Section  
+  #show-case{
+    .scroll-left{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap;
+        text-align: left;
+        letter-spacing: 50px;
+        font-family: a.$sub-font; 
+        margin-top: 0; 
+    }
+    .show-mid{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h2{
+            font-size: 20vw;
+            font-weight:100;
+        }
+        .left{
+          letter-spacing: 2px;
+          font-size: 3vw; 
+        }
+        .right{
+          letter-spacing: 2px;
+          font-size: 3vw;
+        }
+    }  
+  }
+//   x-ray view
+
+#comparison-con{
+    display: block;
+  }
+#mobile-tablet-view{
+    display: none;
+   
+    img{
+        margin-bottom: 15px;
+        background-color: a.$black;
+       
+    }
+    .no-magin{
+        margin-bottom: 0;
+      }
+}
+// 
+#break-case{
+    .scroll-right{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+        margin-top: 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    .show-mid{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: a.$white;
+        h2{
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            font-size: 20vw;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight:100;
+        }
+        .left{
+            letter-spacing: 2px;
+            font-size: 3vw; 
+        }
+        .right{
+            letter-spacing: 2px;
+            font-size: 3vw;
+            margin-bottom: 20px;
+        }
+    }  
+  }
+ 
+//   Scroll Animation
+#trivox-flip {
+    max-width: 100%;
+  }
+
+//   
+#break-case2{
+    background-color: a.$off-white;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    height: 300px;
+
+    .scroll-right{
+        font-size: 50vw;
+        letter-spacing: 50px;
+        margin-top: 150px;
+       
+        
+    }
+    .show-mid{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h2{
+            font-family: a.$main-font;
+            text-transform: uppercase;
+            font-size: 20vw;
+            white-space: nowrap; 
+            text-align: center;
+            font-weight:100;
+        }
+        .left{
+          letter-spacing: 2px; 
+          font-size: 3vw;
+        }
+        .right{
+          letter-spacing: 2px;
+          font-size: 3vw;
+        }
+    }  
+  }
+//  Infor Earbuds Section
+#info-earbuds{
+    background-color: a.$off-white;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    .grid-con{
+        grid-column: 2/3;
+        grid-row:1/1;	
+        margin: 0;
+    }
+    .scroll-right{
+      font-size: 30vw;
+        
+    }
+    .scroll-left{
+        font-size: 30vw;
+        margin-top: 0; 
+    }
+    .main-info{
+        position: absolute;
+        top:10%;
+        .new-head{
+            text-align: center;
+            font-family: a.$sub-font;
+            font-size: 4vw;
+            font-weight: lighter;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .info{
+            margin-bottom: 75px;
+            h2{
+                text-transform: uppercase;
+                font-family: a.$main-font;
+                font-weight: 200;
+            }
+            p{
+                font-family: a.$sub-font;
+                font-weight: lighter;
+                padding-top: 5px;
+
+            }
+        }
+    }
+} 
+// Review Section
+#main-review{
+    .scroll-right{
+      font-size: 30vw;
+      margin-top: -200px;
+       
+    }
+    .scroll-left{
+        font-size: 30vw; 
+        margin-top: 0; 
+    }
+    .review1, .review2{
+        background-color: a.$white;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        align-content: center;
+        font-family: a.$sub-font;
+        padding: 12px;
+        z-index: 2;
+        
+    }
+    .review1{
+        margin-top: -185px;
+        .left{
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .center{
+            margin-bottom: 5px;
+            font-family: a.$sub-font;
+            font-weight: lighter;
+        }
+        .right{
+            display: flex;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            justify-content: flex-end;
+
+        }
+    }
+    .review2{
+        .left{
+            display: flex;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            justify-content: flex-end;
+           
+        }
+        .center{
+            margin-bottom: 5px;
+            font-family: a.$sub-font;
+            font-weight: lighter;
+        }
+        .right{
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+
+        }
+    }
+}
+// Break3
+#break-case3{
+    margin-top: 150px;
+
+    .scroll-right{
+        display: flex;
+        color: a.$grey;
+        text-transform: uppercase;
+        font-size: 50vw;
+        white-space: nowrap; 
+        text-align: right; 
+        letter-spacing: 50px;
+        font-family: a.$sub-font;
+       margin-top: -200px;
+       
+    }
+}
 }

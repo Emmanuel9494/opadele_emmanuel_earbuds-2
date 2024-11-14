@@ -2,23 +2,24 @@
 (function () {
   const menuLogo = document.querySelector("#main-logo");
   const showMobile = document.querySelector(".mobile-nav");
-  const closeLinks = document.querySelectorAll(".mobile-nav a");
-  console.log(closeLinks);
-
-  function toggleMenu(){
-    showMobile.classList.toggle('display');
-    console.log("Menu Clicked");
-
-}
-
-  menuLogo.addEventListener("click", toggleMenu);
-  showMobile.addEventListener("click", toggleMenu);
-  closeLinks.forEach(link => {
-     link.addEventListener("click", toggleMenu);
-    });
-
+  const closeLinks = document.querySelectorAll(".mobile-nav nav ul li a ");
   
+  function toggleMenu() {
+    if (window.innerWidth <= 767) { // Checking if screen size is 767px or less
+      showMobile.classList.toggle('display');
+      console.log("Menu Clicked");
+    }
+  }
+
+  if (window.innerWidth <= 767) { // Making sure it does not apply to screen size 768px and above
+    menuLogo.addEventListener("click", toggleMenu);
+    closeLinks.forEach(link => {
+      link.addEventListener("click", toggleMenu);
+    });
+  }
+
 })();
+
 
 // Trivox Text Scroll 
 (function () {
@@ -289,6 +290,12 @@ link.addEventListener("click", scrollLink);
   });
   gsap.to(".moreTrig2", {
     x: "-90%",
+    duration: 5,
+    ease: "linear",
+    repeat: -1
+  });
+  gsap.to(".case3", {
+    x: "100%",
     duration: 5,
     ease: "linear",
     repeat: -1

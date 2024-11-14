@@ -8,7 +8,6 @@
         font-family: a.$main-font;
         text-transform: uppercase;
         letter-spacing: 5px;
-        text-shadow: 3px 3px 34px rgba(0, 0, 0, 0.539);
     }
     #ear-buds{
        
@@ -29,5 +28,6 @@ button {
     cursor: pointer;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: transparent;
 }
 
