@@ -29,13 +29,19 @@ footer{
         margin-bottom: 15px;
         display: flex;
         justify-content: center;
+        
         img{
             padding-left: 5px;
             padding-right: 5px;
+            cursor: pointer;
         }
        
     }
     .foot-end{
         margin-bottom: 45px;
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
