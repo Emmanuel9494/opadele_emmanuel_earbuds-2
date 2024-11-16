@@ -9,6 +9,10 @@
       showMobile.classList.toggle('display');
       console.log("Menu Clicked");
     }
+    gsap.fromTo(showMobile, 
+      { opacity: 0 }, 
+      {opacity: 1, duration: 1, ease: "power2.out"}
+  );
   }
 
   if (window.innerWidth <= 767) { // Making sure it does not apply to screen size 768px and above
@@ -88,13 +92,13 @@
     // run a for loop to populate image array
     for(let i =0; i < frameCount; i++){
         const img = new Image();
-        img.src =`images/trivox-animation${(i + 1).toString().padStart(4, '0')}.jpg`;
+        img.src =`images/trivox-animation${(i + 1).toString().padStart(4, '0')}.png`;
         images.push(img)
 
     }
 
     // console.table(images);
-
+    // if (window.innerWidth <= 767) { tried to add an IF for each screen size to adjust scrollTrigger markers but did not work on first attempt...i closed my eyes and pushed my branch }
     gsap.to(pics, {
         frame: 840,
         snap: "frame",
@@ -103,7 +107,7 @@
             pin: true,
             scrub: 1,
             markers: false,
-            start: "top 40%",
+            start: "top 5%",
             end: "50%  10%"
         },
         onUpdate: render
