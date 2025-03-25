@@ -44,33 +44,38 @@
   }
 
   #hero{
-    .scroll-left{
-      margin-top: 0;
-      font-size: 25vw;
+    min-height: 100vh;
+    padding: 6rem 0;
+    position: relative;
+    
+    .scroll-hide:first-of-type {
+        top: 0;
     }
-    .s-roll{
-        margin-top: -230px;
-
+    .scroll-hide:last-of-type {
+        bottom: 0;
+    }
+    
+    .scroll-left{
+        font-size: 20vw;
+        letter-spacing: 30px;
+        margin-top: -45px;
     }
     .scroll-right{
-        font-size: 25vw;
+        font-size: 20vw;
+        letter-spacing: 30px;
+        margin-bottom: -45px;
     }
     .hero-content{
-        margin-top: -300px;
         h2{
-            font-size: 20vw;
-            font-weight:100;
+            font-size: 12vw;
+            margin: 2rem 0;
         }
-        .left{
-          letter-spacing: 2px; 
-          font-size: 3vw;
-        }
-        .right{
-         letter-spacing: 2px;
-         font-size: 3vw;
+        .left, .right{
+            font-size: 1.4rem;
+            margin: 1rem 0;
         }
     }
-}
+  }
 // break case Section  
 #show-case{
     .scroll-left{
@@ -97,6 +102,8 @@
   }
   // Review Section
 #main-review{
+    padding: 8rem 0;
+
     .scroll-right{
       font-size: 30vw;
       margin-top: -200px;
@@ -107,14 +114,21 @@
         margin-top: 0; 
     }
     .review1, .review2{
+        max-width: 70%;
+        padding: 3rem;
+        margin: 4rem auto;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
         background-color: a.$white;
-        margin-bottom: 15px;
         border-radius: 20px;
         align-content: center;
         font-family: a.$sub-font;
-        padding: 12px;
         z-index: 2;
         
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
     }
     .review1{
         margin-top: -255px;
@@ -131,5 +145,172 @@
     }
 }
 
-   
+#player-container {
+    width: 75%;
+    max-width: 1000px;
+    margin: 4rem auto;
+    background-color: a.$white;
+    
+    .player {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: a.$black;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+#comparison-con{
+    display: block;
+    background-color: a.$black;
+    width: 80%;
+    max-width: 1000px;
+    margin: 3rem auto;
+}
+
+#xray{
+    position: relative;
+    aspect-ratio: 16/9;
+    background-image: url(../images/trivox-xray.png);
+    background-size: cover;
+    z-index: 1000;
+    border-radius: 12px;
+}
+
+#divisor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/trivox-no-xray.png);
+    background-size: cover;
+    height: 100%;
+    width: 50%;
+    border-radius: 12px 0 0 12px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 5%;
+    background: a.$white;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#Tri-colors {
+    padding: 6rem 0;
+
+    #buds-con {
+        width: 70%;
+        max-width: 800px;
+
+        h2 {
+            font-size: 4vw;
+            margin-bottom: 4rem;
+        }
+
+        #ear-buds {
+            width: 60%;
+            max-width: 500px;
+            margin: 4rem auto;
+        }
+
+        #color-btns {
+            gap: 2rem;
+            margin-top: 4rem;
+
+            button {
+                width: 60px;
+                height: 60px;
+                padding: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                }
+
+                &.active {
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}
+
+#about-us {
+    padding: 8rem 0;
+    background-color: a.$black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+        font-size: 4vw;
+        margin-bottom: 5rem;
+        letter-spacing: 2px;
+        color: a.$white;
+    }
+
+    #main-info {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        padding: 0 2rem;
+
+        .abt-body {
+            margin-bottom: 0;
+            padding: 3rem;
+            background-color: a.$white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            .head-info {
+                font-size: 2vw;
+                margin-bottom: 2.5rem;
+                letter-spacing: 1px;
+                
+            }
+
+            .about-para {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: a.$black;
+            }
+        }
+    }
+}
+
+.back-to-top {
+    bottom: 4rem;
+    right: 4rem;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    svg {
+        width: 28px;
+        height: 28px;
+        transform: rotate(360deg);
+    }
+}
+
 }
