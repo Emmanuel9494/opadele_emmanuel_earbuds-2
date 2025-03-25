@@ -16,6 +16,9 @@
   #comparison-con{
     display: block;
     background-color: a.$black;
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
   }
 
   #xray{
@@ -24,7 +27,7 @@
       background-image: url(../images/trivox-xray.png);
       background-size: cover;
       z-index: 1000;
-      
+      border-radius: 8px;
   }
 
   #divisor{
@@ -35,6 +38,7 @@
       background-size: cover;
       height: 100%;
       width: 50%;
+      border-radius: 8px 0 0 8px;
   }
 
   input[type=range] {
@@ -45,6 +49,8 @@
     top: 5%;
     background: a.$white;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   input[type=range]:focus {
@@ -180,32 +186,35 @@ a{
 }
 // HERO SECTION
 #hero{
-    background-color: a.$off-white;
-    pointer-events: none;
-    .scroll-hide{
-      overflow: hidden;
+    min-height: 100vh;
+    padding: 4rem 0;
+    position: relative;
+    
+    .scroll-hide:first-of-type {
+        top: 0;
     }
+    .scroll-hide:last-of-type {
+        bottom: 0;
+    }
+    
     .scroll-left{
-      margin-top: 75px;
-      font-size: 25vw;
+        font-size: 40vw;
+        letter-spacing: 40px;
+        margin-top: -35px;
     }
     .scroll-right{
-      font-size: 25vw;
+        font-size: 40vw;
+        letter-spacing: 40px;
+        margin-bottom: -35px;
     }
     .hero-content{
-        color: a.$black;
         h2{
-            
-            font-size: 20vw;
-            font-weight:100;
+            font-size: 15vw;
+            margin: 1.5rem 0;
         }
-        .left{
-          letter-spacing: 2px; 
-          font-size: 3vw;
-        }
-        .right{
-         letter-spacing: 2px;
-         font-size: 3vw;
+        .left, .right{
+            font-size: 1.2rem;
+            margin: 0.8rem 0;
         }
     }
 }
@@ -260,47 +269,29 @@ a{
       }
 }
 // 
-#break-case{
-    .scroll-right{
-        display: flex;
-        color: a.$grey;
-        text-transform: uppercase;
-        font-size: 50vw;
-        white-space: nowrap; 
-        text-align: right; 
-        letter-spacing: 50px;
-        font-family: a.$sub-font;
-        margin-top: 100px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
+#break-case {
+    min-height: 100vh;
+    padding: 4rem 0;
+    
+    .scroll-right {
+        font-size: 40vw;
+        letter-spacing: 40px;
+        margin-top: 35px;
+        opacity: 0.1;
     }
-    .show-mid{
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: a.$white;
-        h2{
-            font-family: a.$main-font;
-            text-transform: uppercase;
-            font-size: 20vw;
-            white-space: nowrap; 
-            text-align: center;
-            font-weight:100;
+
+    .show-mid {
+        h2 {
+            font-size: 15vw;
+            margin: 1.5rem 0;
         }
-        .left{
-            letter-spacing: 2px;
-            font-size: 3vw; 
+
+        .left, .right {
+            font-size: 1.2rem;
+            margin: 0.8rem 0;
         }
-        .right{
-            letter-spacing: 2px;
-            font-size: 3vw;
-            margin-bottom: 20px;
-        }
-    }  
-  }
+    }
+}
  
 //   Scroll Animation
 #trivox-flip {
@@ -393,65 +384,25 @@ a{
 } 
 // Review Section
 #main-review{
-    .scroll-right{
-      font-size: 30vw;
-      margin-top: -200px;
-       
-    }
-    .scroll-left{
-        font-size: 30vw; 
-        margin-top: 0; 
-    }
-    .review1, .review2{
-        background-color: a.$white;
-        margin-bottom: 15px;
-        border-radius: 20px;
-        align-content: center;
-        font-family: a.$sub-font;
-        padding: 12px;
-        z-index: 2;
-        
-    }
-    .review1{
-        margin-top: -185px;
-        .left{
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        .center{
-            margin-bottom: 5px;
-            font-family: a.$sub-font;
-            font-weight: lighter;
-        }
-        .right{
-            display: flex;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            justify-content: flex-end;
+    padding: 6rem 0;
 
-        }
-    }
-    .review2{
-        .left{
-            display: flex;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            justify-content: flex-end;
-           
-        }
-        .center{
-            margin-bottom: 5px;
-            font-family: a.$sub-font;
-            font-weight: lighter;
-        }
-        .right{
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 5px;
+    .review1, .review2 {
+        max-width: 80%;
+        padding: 2.5rem;
+        margin: 3rem auto;
 
+        .left {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .center {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .right {
+            font-size: 1.3rem;
         }
     }
 }
@@ -470,6 +421,98 @@ a{
         font-family: a.$sub-font;
        margin-top: -200px;
        
+    }
+}
+
+#player-container {
+    width: 85%;
+    max-width: 900px;
+    margin: 3rem auto;
+    
+    .player {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: a.$black;
+        border-radius: 12px;
+    }
+}
+
+#Tri-colors {
+    padding: 4rem 0;
+
+    #buds-con {
+        width: 80%;
+        max-width: 600px;
+
+        h2 {
+            font-size: 6vw;
+            margin-bottom: 3rem;
+        }
+
+        #ear-buds {
+            width: 70%;
+            max-width: 400px;
+            margin: 3rem auto;
+        }
+
+        #color-btns {
+            gap: 1.5rem;
+            margin-top: 3rem;
+
+            button {
+                width: 50px;
+                height: 50px;
+                padding: 8px;
+            }
+        }
+    }
+}
+
+#about-us {
+    padding: 6rem 0;
+
+    h3 {
+        font-size: 6vw;
+        margin-bottom: 4rem;
+        color: a.$white;
+    }
+
+    #main-info {
+        .abt-body {
+            margin-bottom: 4rem;
+            padding: 2.5rem;
+            background-color: a.$white;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+            .head-info {
+                font-size: 4vw;
+                margin-bottom: 2rem;
+                
+            }
+
+            .about-para {
+                font-size: 1.1rem;
+                color: a.$black;
+            }
+        }
+    }
+}
+
+.back-to-top {
+    bottom: 3rem;
+    right: 3rem;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    svg {
+        transform: rotate(360deg);
     }
 }
 }
